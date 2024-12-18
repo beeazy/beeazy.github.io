@@ -1,281 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
     <style>
-        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,800italic,400,600,700,800);
-
-        body {
-            background-color: #f5f5f5;
-            padding: 120px 0;
-            font-family: "Open Sans", sans-serif;
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-        .profile-card {
-            position: relative;
-            width: 280px;
-            margin: 0 auto;
-            padding: 40px 30px 30px;
-            background: #fff;
-            border: 5px solid rgba(255, 255, 255, 0.7);
-            text-align: center;
-            border-radius: 4px;
-            transition: all 200ms ease;
-        }
-
-        .mask-shadow {
-            z-index: -1 !important;
-            width: 95%;
-            height: 12px;
-            background: #000;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            position: absolute;
-            border-radius: 4px;
-            opacity: 0;
-            transition: all 400ms ease-in;
-        }
-
-        .profile-card:hover {
-            box-shadow: 0px 30px 60px -5px rgba(55, 55, 71, 0.3);
-            transform: translate3d(0, -5px, 0);
-        }
-
-        .profile-card:hover .mask-shadow {
-            opacity: 1;
-            box-shadow: 0px 30px 60px -5px rgba(55, 55, 71, 0.3);
-            position: absolute;
-        }
-
-        .profile-card header {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .profile-card header a {
-            width: 150px;
-            height: 150px;
-            display: block;
-            border-radius: 100%;
-            margin: -120px auto 0;
-            box-shadow: 0 0 0 5px #82b541;
-        }
-
-        .profile-card header a img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-        }
-
-        .profile-card:hover header a,
-        .profile-card header a:hover {
-            animation: bounceOut 0.4s linear;
-            -webkit-animation: bounceOut 0.4s linear;
-        }
-
-        .profile-card header h1 {
-            font-size: 20px;
-            color: #444;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        .profile-card header h2 {
-            font-size: 14px;
-            color: #acacac;
-            text-transform: uppercase;
-            margin: 0;
-        }
-
-        /*content*/
-        .profile-bio {
-            font-size: 14px;
-            color: #a5a5a5;
-            line-height: 1.7;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        /*link social*/
-        .profile-social-links {
+        * {
             margin: 0;
             padding: 0;
-            list-style: none;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
 
-        .profile-social-links li {
-            display: inline-block;
-            margin: 0 10px;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            text-align: center;
         }
 
-        .profile-social-links li a {
-            width: 55px;
-            height: 55px;
-            display: block;
-            background: #f1f1f1;
-            border-radius: 50%;
-            -webkit-transition: all 2.75s cubic-bezier(0, 0.83, 0.17, 1);
-            -moz-transition: all 2.75s cubic-bezier(0, 0.83, 0.17, 1);
-            -o-transition: all 2.75s cubic-bezier(0, 0.83, 0.17, 1);
-            transition: all 2.75s cubic-bezier(0, 0.83, 0.17, 1);
-            transform-style: preserve-3d;
+        .container {
+            width: 90%;
+            max-width: 600px;
         }
 
-        .profile-social-links li a img {
-            width: 35px;
-            height: 35px;
-            margin: 10px auto 0;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
 
-        .profile-social-links li a:hover {
-            background: #ddd;
-            transform: scale(1.2);
-            -webkit-transform: scale(1.2);
+        p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
         }
 
-        /*animation hover effect*/
-        @-webkit-keyframes bounceOut {
-            0% {
-                box-shadow: 0 0 0 4px #82b541;
-                opacity: 1;
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 10px 0;
+            padding: 15px 20px;
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .card span {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .card svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 800px;
             }
 
-            25% {
-                box-shadow: 0 0 0 1px #82b541;
-                opacity: 1;
-            }
-
-            50% {
-                box-shadow: 0 0 0 7px #82b541;
-                opacity: 1;
-            }
-
-            75% {
-                box-shadow: 0 0 0 4px #82b541;
-                opacity: 1;
-            }
-
-            100% {
-                box-shadow: 0 0 0 5px #82b541;
-                opacity: 1;
+            h1 {
+                font-size: 3rem;
             }
         }
 
-        @keyframes bounceOut {
-            0% {
-                box-shadow: 0 0 0 6px #82b541;
-                opacity: 1;
-            }
-
-            25% {
-                box-shadow: 0 0 0 2px #82b541;
-                opacity: 1;
-            }
-
-            50% {
-                box-shadow: 0 0 0 9px #82b541;
-                opacity: 1;
-            }
-
-            75% {
-                box-shadow: 0 0 0 3px #82b541;
-                opacity: 1;
-            }
-
-            100% {
-                box-shadow: 0 0 0 5px #82b541;
-                opacity: 1;
-            }
-        }
     </style>
-    <title>Beeazy | Profile</title>
 </head>
-
 <body>
+    <div class="container">
+        <h1>My Projects</h1>
+        <p>Explore my work and discover how I can bring your ideas to life.</p>
 
-    <aside class="profile-card">
-        <div class="mask-shadow"></div>
-        <header>
+        <a href="#" class="card">
+            <span>Project 1</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm1.66 13.12l3-3a1 1 0 00-1.41-1.41l-1.88 1.88V8a1 1 0 00-2 0v4.59l-1.88-1.88a1 1 0 00-1.41 1.41l3 3a1 1 0 001.41 0z"/>
+            </svg>
+        </a>
+        <a href="#" class="card">
+            <span>Project 2</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm1.66 13.12l3-3a1 1 0 00-1.41-1.41l-1.88 1.88V8a1 1 0 00-2 0v4.59l-1.88-1.88a1 1 0 00-1.41 1.41l3 3a1 1 0 001.41 0z"/>
+            </svg>
+        </a>
+        <a href="#" class="card">
+            <span>Project 3</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm1.66 13.12l3-3a1 1 0 00-1.41-1.41l-1.88 1.88V8a1 1 0 00-2 0v4.59l-1.88-1.88a1 1 0 00-1.41 1.41l3 3a1 1 0 001.41 0z"/>
+            </svg>
+        </a>
 
-            <!-- here’s the avatar -->
-            <a href="">
-                <img height="200px"
-                    src="https://images.fonearena.com/blog/wp-content/uploads/2023/09/Android-new-logo-robotics.gif">
-            </a>
-
-            <!-- the username -->
-            <h1>Evans Mutwiri</h1>
-
-            <!-- and role or location -->
-            <h2>Front End Guy</h2>
-
-        </header>
-
-        <!-- bit of a bio; who are you? -->
-        <div class="profile-bio">
-
-            <p>"Mobile developer with a focus on innovation, reliability, and security. Collaborative team player dedicated to optimizing code and delivering high-performance, user-friendly applications. Values communication, feedback, and continuous learning."</p>
-
-        </div>
-
-        <!-- some social links to show off -->
-        <ul class="profile-social-links">
-
-            <!-- twitter - el clásico  -->
-            <li>
-                <a href="https://twitter.com/eazybytes">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/social-twitter.svg">
-                </a>
-            </li>
-
-            <!-- envato – use this one to link to your marketplace profile -->
-            <li>
-                <a href="">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/240px-LinkedIn_logo_initials.png">
-                </a>
-            </li>
-
-            <!-- codepen - your codepen profile-->
-            <li>
-                <a href="https://github.com/beeazy">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/240px-Octicons-mark-github.svg.png">
-                </a>
-            </li>
-
-            <!-- add or remove social profiles as you see fit -->
-
-        </ul>
-
-    </aside>
-    
-    <!--Start of Tawk.to Script-->
-
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function () {
-            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/642ad4be4247f20fefe98dba/1gt3ku29h';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    </script>
-
-    <!--End of Tawk.to Script-->
-
-    <!-- that’s all folks! -->
+    </div>
 </body>
-
 </html>
