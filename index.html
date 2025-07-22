@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="oqeaQ3GSUzFNSbeoxS9TQyWhy_PRJ05gQCF5jdYzajo" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>My Projects</h1>
+        <p class="intro">Step into my creative world, where innovative ideas meet practical solutions. Discover how I can turn your visions into reality.</p>
+
+        <!-- Project Cards -->
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+                <span>Web Development</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm1.66 13.12l3-3a1 1 0 00-1.41-1.41l-1.88 1.88V8a1 1 0 00-2 0v4.59l-1.88-1.88a1 1 0 00-1.41 1.41l3 3a1 1 0 001.41 0z"/>
+                </svg>
+            </div>
+            <div class="card-content">
+                <img src="https://via.placeholder.com/400x200" alt="Project Screenshot">
+                <p>
+                    I make beautiful, responsive websites that are easy to use and built with the latest technologies.
+                </p>
+                <a href="#" class="details-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+                <span>Mobile App Development</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm1.66 13.12l3-3a1 1 0 00-1.41-1.41l-1.88 1.88V8a1 1 0 00-2 0v4.59l-1.88-1.88a1 1 0 00-1.41 1.41l3 3a1 1 0 001.41 0z"/>
+                </svg>
+            </div>
+            <div class="card-content">
+                <img src="https://via.placeholder.com/400x200" alt="Project Screenshot">
+                <p>
+                    I develop mobile apps that are fast, secure, and user-friendly. Let's bring your app idea to life.
+                </p>
+                <a href="#" class="details-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+                <span>Website and App Security</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm1.66 13.12l3-3a1 1 0 00-1.41-1.41l-1.88 1.88V8a1 1 0 00-2 0v4.59l-1.88-1.88a1 1 0 00-1.41 1.41l3 3a1 1 0 001.41 0z"/>
+                </svg>
+            </div>
+            <div class="card-content">
+                <img src="https://via.placeholder.com/400x200" alt="Project Screenshot">
+                <p>
+                    I provide security solutions for websites and apps to protect your data and users from cyber threats.
+                </p>
+                <a href="#" class="details-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+                <span>Digital Branding</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm1.66 13.12l3-3a1 1 0 00-1.41-1.41l-1.88 1.88V8a1 1 0 00-2 0v4.59l-1.88-1.88a1 1 0 00-1.41 1.41l3 3a1 1 0 001.41 0z"/>
+                </svg>
+            </div>
+            <div class="card-content">
+                <img src="https://via.placeholder.com/400x200" alt="Project Screenshot">
+                <p>
+                    I help businesses create a unique brand identity that stands out in the digital world.
+                </p>
+                <a href="#" class="details-link">View Details</a>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+
+        <!-- Footer with inline css -->
+        <footer style="margin-top: 30px;">
+            <p>&copy; <span id="current-year"></span> Evans. All Rights Reserved.</p>
+             <!-- Theme Toggle (Radio Buttons) -->
+        <div class="theme">
+            <label>
+                Light
+                <input type="radio" name="theme" onclick="setTheme('light')" checked>
+            </label>
+            <label>
+                Dark
+                <input type="radio" name="theme" onclick="setTheme('dark')">
+            </label>
+        </div>
+        </footer>
+
+    </div>
+
+    <script>
+        function toggleCard(card) {
+            const content = card.querySelector('.card-content');
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.classList.remove('open');
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.classList.add('open');
+            }
+        }
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-theme');
+            } else {
+                document.body.classList.remove('dark-theme');
+            }
+        }
+
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
