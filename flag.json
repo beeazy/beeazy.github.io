@@ -8,6 +8,6 @@
   },
   "messages": {
     "force_update": "A new version is available. Please update to continue using the app.",
-    "apk_disabled": "This shared APK is no longer supported. Please download the latest version from the Play Store."
+    "apk_disabled": "This app version is no longer supported. Please download the latest version from the Play Store."
   }
 }
