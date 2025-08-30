@@ -1,0 +1,13 @@
+{
+  "app_version": {
+    "min_supported_version": 1,
+    "latest_version": 2,
+    "force_update": false,
+    "apk_share_enabled": false,
+    "playstore_link": "https://play.google.com/store/apps/details?id=com.example.app"
+  },
+  "messages": {
+    "force_update": "A new version is available. Please update to continue using the app.",
+    "apk_disabled": "This shared APK is no longer supported. Please download the latest version from the Play Store."
+  }
+}
