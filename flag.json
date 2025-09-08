@@ -2,12 +2,12 @@
   "app_version": {
     "min_supported_version": "1.0.0",
     "latest_version": "2.0.0",
-    "force_update": false,
+    "force_update": true,
     "apk_share_enabled": true,
-    "playstore_link": "https://www.worldledgers.com/"
+    "playstore_link": "https://play.google.com/store/apps/details?id=com.goodworkevans.worldlegders&hl=en-US&ah=z9y4FGCm6SmD2_lCabfCKZswPHs"
   },
   "messages": {
     "force_update": "A new version is available. Please update to continue using the app.",
-    "apk_disabled": "This app version is no longer supported. Please download the latest version from the Play Store."
-  }
+    "apk_disabled": "This app version is no longer supported. Please download the latest version from the Play Store."
+  }
 }
