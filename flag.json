@@ -1,7 +1,7 @@
 {
   "app_version": {
     "min_supported_version": "1.0.0",
-    "latest_version": "2.0.8",
+    "latest_version": "2.0.9",
     "force_update": true,
     "apk_share_enabled": true,
     "playstore_link": "https://play.google.com/store/apps/details?id=com.goodworkevans.worldlegders"
