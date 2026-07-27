@@ -1,3 +1,3 @@
 {
-    "url": "ngrok http --url=safe-guided-mastiff.ngrok-free.app 80/api"
+    "url": "https://aaa6-169-150-218-37.ngrok-free.app/api"
 }
